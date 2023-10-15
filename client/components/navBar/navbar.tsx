@@ -1,10 +1,12 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import './navbar.css';
 import { Button } from '@/components/ui/button';
 import ToolTip from '@/utils/toolTip';
 import Sidebar from '@/components/navBar/sidebar/sidebar';
-import Link from 'next/link';
+import { Link } from 'react-scroll';
 
 const Navbar = () => {
   return (
@@ -18,9 +20,36 @@ const Navbar = () => {
         </ToolTip>
         {/* Desktop start */}
         <div className="nav-links flex flex-row items-center gap-10">
-          <h3 className="cursor-pointer">Home</h3>
-          <h3 className="cursor-pointer">About</h3>
-          <h3 className="cursor-pointer">Contact</h3>
+          <Link
+            activeClass="active"
+            to="Home-section"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={1000}
+          >
+            <h3 className="cursor-pointer">Home</h3>
+          </Link>
+          <Link
+            activeClass="active"
+            to="About-section"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={1000}
+          >
+            <h3 className="cursor-pointer">About</h3>
+          </Link>
+          <Link
+            activeClass="active"
+            to="Contact-section"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={1000}
+          >
+            <h3 className="cursor-pointer">Contact</h3>
+          </Link>
         </div>
         <div className="nav-cta">
           <Button>
