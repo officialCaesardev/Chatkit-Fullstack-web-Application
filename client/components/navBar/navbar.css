@@ -1,0 +1,6 @@
+@media (max-width: 767px) {
+  .nav-cta,
+  .nav-links {
+    display: none !important;
+  }
+}

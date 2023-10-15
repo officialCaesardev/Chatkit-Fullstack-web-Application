@@ -1,0 +1,108 @@
+@media (max-width: 767px) {
+  #checkbox {
+    display: none;
+  }
+  .menu-toggle {
+    display: flex !important;
+  }
+  .toggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition-duration: 0.5s;
+    transform: scale(0.75);
+  }
+
+  .bars {
+    width: 100%;
+    height: 4px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 4px;
+  }
+
+  #bar2 {
+    transition-duration: 0.8s;
+  }
+
+  #bar1,
+  #bar3 {
+    width: 70%;
+  }
+
+  #checkbox:checked + .toggle .bars {
+    position: absolute;
+    transition-duration: 0.5s;
+  }
+
+  #checkbox:checked + .toggle #bar2 {
+    transform: scaleX(0);
+    transition-duration: 0.5s;
+  }
+
+  #checkbox:checked + .toggle #bar1 {
+    width: 100%;
+    transform: rotate(45deg);
+    transition-duration: 0.5s;
+  }
+
+  #checkbox:checked + .toggle #bar3 {
+    width: 100%;
+    transform: rotate(-45deg);
+    transition-duration: 0.5s;
+  }
+
+  #checkbox:checked + .toggle {
+    transition-duration: 0.5s;
+    transform: rotate(180deg);
+  }
+  .sideBar {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    display: none;
+  }
+  .slider-full-bg {
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.8px);
+    -webkit-backdrop-filter: blur(2.8px);
+    opacity: 0;
+  }
+  .sidebar-bg {
+    background-color: black;
+    height: 100vh;
+    width: 60%;
+    position: fixed;
+    z-index: 999;
+    right: -100%;
+    top: 0;
+    border-radius: 10px 0 0 10px;
+  }
+  .menu-toggle {
+    z-index: 5 !important;
+  }
+  .menu-navLinks {
+    margin-top: 35%;
+    min-height: calc(50vh);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu-navLinks .menu-navLink {
+    color: #ffffff;
+  }
+}
