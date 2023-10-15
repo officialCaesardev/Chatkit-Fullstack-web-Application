@@ -62,7 +62,7 @@
     transform: rotate(180deg);
   }
   .sideBar {
-    position: fixed;
+    position: fixed !important;
     z-index: 2;
     left: 0;
     top: 0;

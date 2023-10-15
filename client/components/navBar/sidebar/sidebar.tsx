@@ -4,6 +4,7 @@ import React, { useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import './sidebar.css';
 import gsap from 'gsap';
+import { Link } from 'react-scroll';
 
 const Sidebar = () => {
   const [toggleCheck, setToggleCheck] = useState<Boolean>(false);
@@ -65,12 +66,39 @@ const Sidebar = () => {
           <div ref={toggleBtn} className="bars" id="bar3"></div>
         </label>
       </div>
-      <div className="sideBar">
+      <div className="sideBar hidden">
         <div className="sidebar-bg">
           <div className="menu-navLinks flex flex-col justify-center items-center gap-10">
-            <h3 className="cursor-pointer menu-navLink">Home</h3>
-            <h3 className="cursor-pointer menu-navLink">About</h3>
-            <h3 className="cursor-pointer menu-navLink">Contact</h3>
+            <Link
+              activeClass="active"
+              to="Home-section"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={1000}
+            >
+              <h3 className="cursor-pointer menu-navLink">Home</h3>
+            </Link>
+            <Link
+              activeClass="active"
+              to="About-section"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={1000}
+            >
+              <h3 className="cursor-pointer menu-navLink">About</h3>
+            </Link>
+            <Link
+              activeClass="active"
+              to="Contact-section"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={1000}
+            >
+              <h3 className="cursor-pointer menu-navLink">Contact</h3>
+            </Link>
             <div className="nav-cta-mobile w-full px-5 ">
               <Button variant={'outline'} className="w-full">
                 <h3>Login</h3>
